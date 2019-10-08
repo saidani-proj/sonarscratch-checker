@@ -1,0 +1,1 @@
+# sonarscratch-checker
