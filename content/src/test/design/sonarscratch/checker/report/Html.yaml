@@ -1,0 +1,51 @@
+Html : ==
+    - Write : ==
+        - Log : ++
+        - Total : ++
+        - Issues : ==
+            - 0 : ++
+            - 1 : ==
+                - Message : ==
+                    - Contains html tag : ++
+                    - Contains html property : ++
+                    - @@ : ++
+                - Type : ==
+                    - Null : ++
+                    - @@ : ++
+                - Severity : ++
+                - File : ==
+                    - With severity : ++
+                    - @@ : ++
+                - Preview : ==
+                    - Empty file : ++
+                    - 1 Line : ==
+                        - At start : ++
+                        - At end : ++
+                        - @@ : ==
+                            - White : ==
+                                - Space : ++
+                                - Tab : ++
+                            - @@ : ==
+                                - Unicode encoding : ++
+                                - Windows 1252 encoding : ++
+                                - OutOfPreview : ==
+                                    - Linux : ++
+                                    - @@ : ++
+                                - @@ : ==
+                                    - Empty line : ++
+                                    - @@ : ++
+                    - 2 Lines : ==
+                        - Linux : ++
+                        - MacOS : ++
+                        - Windows : ++
+                    - 3 Lines : ++
+                    - Component : ==
+                        - Unspecified : ++
+                        - Not found : ++
+                    - Project : ==
+                        - Unspecified : ++
+                        - Not found : ++
+                        - @@ : ==
+                            - File not found : ++
+                            - Content changed : ++
+            - 2 : ++

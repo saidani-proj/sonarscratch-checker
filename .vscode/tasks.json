@@ -1,0 +1,56 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Maven build",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/content"
+            },
+            "command": "mvn compile",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Maven test",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/content"
+            },
+            "command": "mvn jacoco:prepare-agent test",
+            "group": "test"
+        },
+        {
+            "label": "Maven bundle",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/content"
+            },
+            "command": "mvn assembly:single",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Maven test+sonar",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/content"
+            },
+            "command": "mvn jacoco:prepare-agent test sonar:sonar",
+            "group": "none",
+            "problemMatcher": []
+        },
+        {
+            "label": "Maven sonar",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/content"
+            },
+            "command": "mvn sonar:sonar",
+            "group": "none",
+            "problemMatcher": []
+        }
+    ]
+}

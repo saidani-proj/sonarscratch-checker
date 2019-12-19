@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug - App",
+            "request": "launch",
+            "mainClass": "sonarscratch.checker.app.App",
+            "projectName": "sonarscratchchecker",
+            "args": "-r --path \"${workspaceFolder}/content/target/sonarqube-issues.html\" --project:org.sonarscratch.checker:sonarscratchchecker \"${workspaceFolder}/content\""
+        }
+    ]
+}

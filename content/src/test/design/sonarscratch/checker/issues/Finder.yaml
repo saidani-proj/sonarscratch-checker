@@ -1,0 +1,24 @@
+Finder : ==
+    - Count : ==
+        - Exception : ++
+        - @@ : ==
+            - Log : ++
+            - @@ : ++
+    - Find : ==
+        - Exception : ++
+        - @@ : ==
+            - Out of limit : ++
+            - Log : ++
+            - Bad response : ++
+            - Issues : ++
+            - Components : ++
+    - Wait : ==
+        - Exception : ==
+          - Failing : ++
+          - Pending : ++
+          - @@ : ++
+        - Log : ==
+          - Failed : ==
+              - Retry : ++
+              - @@ : ++
+          - Succeed : ++

@@ -1,0 +1,25 @@
+- Client : ==
+    - Constructor : ==
+        - Incorrect count : ++
+        - Incorrect sleep : ++
+    - On : ==
+        - Url : ==
+            - Incorrect : ++
+            - Correct : ==
+                - Not responding : ++
+                - Responding : ==
+                    - Incorrect code : ++
+                    - Correct code : ==
+                        - Default : ==
+                            - Without callback : ++
+                            - With callback : ==
+                                - Exception : ==
+                                    - Inner Exception : ++
+                                    - @@ : ++
+                                - @@ : ++
+                        - @@ : ++
+        - Count greater than 1 : ++
+        - Admin authorization : ++
+        - Log : ==
+            - Error : ++
+            - Info : ++

@@ -1,0 +1,18 @@
+FilePreview : ==
+    - GetPreview : ==
+        - 1 Line : ==
+            - At start : ++
+            - At end : ++
+            - @@ : ++
+        - 2 Lines : ==
+            - Second line 1 char : ++
+            - @@ : ++
+        - File with 4 lines : ++
+        - Surrounded lines : ==
+            - 2 : ++
+            - @@ : ++
+        - Wrong range : ++
+        - Line separator : ==
+            - Linux : ++
+            - MacOS : ++
+            - Windows : ++

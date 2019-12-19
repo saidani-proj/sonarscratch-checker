@@ -1,0 +1,30 @@
+- Reader : ==
+    - Read : ==
+        - Correct args : ==
+            - White spaces : ++
+            - Help : ==
+                - Long : ++
+                - Short : ++
+            - Version : ==
+                - Long : ++
+                - Short : ++
+            - Url : ++
+            - Count : ++
+            - Sleep : ++
+            - Report : ==
+                - Long : ++
+                - Short : ++
+            - Path : ++
+            - Project : ==
+                - 0 : ++
+                - 1 : ++
+                - 2 : ++
+            - Encoding : ==
+                - Long : ++
+                - Short : ++
+            - Check : ==
+                - Long : ++
+                - Short : ++
+        - Incorrect args : ==
+            - Incoherent : ++
+            - Unknown : ++

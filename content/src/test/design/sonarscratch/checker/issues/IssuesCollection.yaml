@@ -1,0 +1,10 @@
+IssueCollection : ==
+    - Total : ++
+    - AddIssue : ++
+    - Count : ==
+        - 0 : ++
+        - @@ : ++
+    - Iterator : ==
+        - 0 : ++
+        - 1 : ++
+        - @@ : ++

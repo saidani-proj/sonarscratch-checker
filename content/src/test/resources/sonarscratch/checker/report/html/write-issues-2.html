@@ -1,0 +1,51 @@
+<html>
+<head><meta charset="UTF-8">
+<style>
+.sonarscratch-checker{font-family: arial, helvetica, clean, sans-serif; font-size: 15px;}
+.sonarscratch-checker-header{background-color: #ECECEC; border: 1px solid #DDD; padding: 4px; margin-bottom: 20px;}
+.sonarscratch-checker-header-warning{color: #E91313}
+.sonarscratch-checker-header-issues{}
+.sonarscratch-checker-issue{border: 1px solid #DDD; margin-top: 10px;}
+.sonarscratch-checker-issue-summary{background-color: #E4ECF3; padding : 4px;}
+.sonarscratch-checker-issue-summary-sep{border-left: 2px solid #61c940; height: 13px; display: inline-block; margin-left: 5px; margin-right: 5px;}
+.sonarscratch-checker-issue-summary-message{}
+.sonarscratch-checker-issue-summary-type{color: #777;}
+.sonarscratch-checker-issue-summary-severity{color: #777;}
+.sonarscratch-checker-issue-summary-file{color: #777;}
+.sonarscratch-checker-issue-summary-more{cursor: pointer; font-size: 10px;}
+.sonarscratch-checker-issue-summary-less{cursor: pointer; font-size: 10px;}
+.sonarscratch-checker-issue-infos{padding: 4px; background-color: #F0E5E4; font-family: sans-serif; font-size: 13px; border: 0px solid #DDD; border-top-width: 1px;}
+.sonarscratch-checker-issue-infos-content{}
+.sonarscratch-checker-issue-infos-content-key{font-weight: bold;}
+.sonarscratch-checker-issue-infos-content-value{}
+.sonarscratch-checker-issue-preview{background-color: #F4F4F4; font-family: monospace; border-collapse: collapse; border: 0px solid #DDD; border-top-width: 1px; width:100%;}
+.sonarscratch-checker-issue-line-preview{}
+.sonarscratch-checker-issue-line-preview-number{padding-left: 5px; padding-right: 5px; width:0px; font-weight: bold;}
+.sonarscratch-checker-issue-line-preview-content{padding: 2px;}
+.sonarscratch-checker-issue-line-preview-content-none{}
+.sonarscratch-checker-issue-line-preview-content-code{background-color: #F6AFAF;}
+</style>
+</head>
+<body class="sonarscratch-checker">
+<div class="sonarscratch-checker-header">
+<div class="sonarscratch-checker-header-warning">This is a basic report, see SonarQube report for more details.</div>
+<div class="sonarscratch-checker-header-issues">This report shows 2 issues from 5.</div>
+</div>
+<div class="sonarscratch-checker-issue">
+<div class="sonarscratch-checker-issue-summary"><span class="sonarscratch-checker-issue-summary-message">This is an test issue (1)</span><div class="sonarscratch-checker-issue-summary-sep"></div>
+<span class="sonarscratch-checker-issue-summary-more" onclick="this.parentNode.querySelector('.sonarscratch-checker-issue-summary-less').style.display='';this.parentNode.querySelector('.sonarscratch-checker-issue-summary-more').style.display='none';this.parentNode.parentNode.querySelector('.sonarscratch-checker-issue-infos').style.display='';">MORE</span><span class="sonarscratch-checker-issue-summary-less" style="display:none" onclick="this.parentNode.querySelector('.sonarscratch-checker-issue-summary-more').style.display='';this.parentNode.querySelector('.sonarscratch-checker-issue-summary-less').style.display='none';this.parentNode.parentNode.querySelector('.sonarscratch-checker-issue-infos').style.display='none';">LESS</span></div>
+<div class="sonarscratch-checker-issue-infos" style="display:none">
+<div class="sonarscratch-checker-issue-infos-content" style="margin-left:0px"><span class="sonarscratch-checker-issue-infos-content-key">component : </span><span class="sonarscratch-checker-issue-infos-content-value">test-component</span></div>
+<div class="sonarscratch-checker-issue-infos-content" style="margin-left:0px"><span class="sonarscratch-checker-issue-infos-content-key">message : </span><span class="sonarscratch-checker-issue-infos-content-value">This is an test issue (1)</span></div>
+</div>
+</div>
+<div class="sonarscratch-checker-issue">
+<div class="sonarscratch-checker-issue-summary"><span class="sonarscratch-checker-issue-summary-message">This is an test issue (2)</span><div class="sonarscratch-checker-issue-summary-sep"></div>
+<span class="sonarscratch-checker-issue-summary-more" onclick="this.parentNode.querySelector('.sonarscratch-checker-issue-summary-less').style.display='';this.parentNode.querySelector('.sonarscratch-checker-issue-summary-more').style.display='none';this.parentNode.parentNode.querySelector('.sonarscratch-checker-issue-infos').style.display='';">MORE</span><span class="sonarscratch-checker-issue-summary-less" style="display:none" onclick="this.parentNode.querySelector('.sonarscratch-checker-issue-summary-more').style.display='';this.parentNode.querySelector('.sonarscratch-checker-issue-summary-less').style.display='none';this.parentNode.parentNode.querySelector('.sonarscratch-checker-issue-infos').style.display='none';">LESS</span></div>
+<div class="sonarscratch-checker-issue-infos" style="display:none">
+<div class="sonarscratch-checker-issue-infos-content" style="margin-left:0px"><span class="sonarscratch-checker-issue-infos-content-key">component : </span><span class="sonarscratch-checker-issue-infos-content-value">test-component</span></div>
+<div class="sonarscratch-checker-issue-infos-content" style="margin-left:0px"><span class="sonarscratch-checker-issue-infos-content-key">message : </span><span class="sonarscratch-checker-issue-infos-content-value">This is an test issue (2)</span></div>
+</div>
+</div>
+</body>
+</html>
