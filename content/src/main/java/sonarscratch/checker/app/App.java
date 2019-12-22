@@ -105,7 +105,7 @@ public class App {
         finder.wait(config.getSonarUrl());
         boolean hasIssues = finder.count(config.getSonarUrl()) > 0;
 
-        if (config.writeReport()) {
+        if (hasIssues && config.writeReport()) {
             var finderResult = finder.find(config.getSonarUrl());
             var bufferWriter = executeDependency.bufferedWriter(config.getReportPath());
 

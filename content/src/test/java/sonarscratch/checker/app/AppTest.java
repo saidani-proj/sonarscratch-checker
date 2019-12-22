@@ -151,7 +151,30 @@ public class AppTest {
     }
 
     @Test
-    public void test_Execute_Report()
+    public void test_Execute_Report_NoIssues()
+            throws AppException, ReaderException, FinderException, JSONException, IOException {
+        var mockedApp = Mockito.spy(new App());
+        var mockedAppExecuteDependency = Mockito.spy(new AppExecuteDependency());
+
+        doReturn(mockedAppExecuteDependency).when(mockedApp).getExecuteDependency();
+
+        var mockedFinder = Mockito.mock(Finder.class);
+
+        doReturn(mockedFinder).when(mockedAppExecuteDependency).finder(Mockito.any(), Mockito.any());
+        doReturn(0).when(mockedFinder).count(Mockito.anyString());
+
+        var stringWriter = new StringWriter();
+        var bufferedWriter = new BufferedWriter(stringWriter);
+
+        doReturn(bufferedWriter).when(mockedAppExecuteDependency).bufferedWriter(Mockito.anyString());
+
+        assertEquals(0, mockedApp.execute(new String[] { "-r" }, mockedAppExecuteDependency,
+                mockedAppExecuteDependency.systemLogger()));
+        assertEquals(0, stringWriter.toString().length());
+    }
+
+    @Test
+    public void test_Execute_Report_()
             throws AppException, ReaderException, FinderException, JSONException, IOException {
         var mockedApp = Mockito.spy(new App());
         var mockedAppExecuteDependency = Mockito.spy(new AppExecuteDependency());

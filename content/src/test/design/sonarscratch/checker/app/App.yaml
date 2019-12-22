@@ -10,7 +10,9 @@
         - Get Count :
             - 0 : ++
             - @@ : ++
-        - Report : ++
+        - Report :
+            - No issues : **
+            - @@ : ++
         - Exception : ++
         - Exit Code : ==
             - Success : ++
