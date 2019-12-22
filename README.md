@@ -1,5 +1,7 @@
 # sonarscratch/checker
 
+![Java CI badge](https://github.com/tcdorg/sonarscratch-checker/workflows/Java%20CI/badge.svg)
+
 ## About this project
 
 ![Build & Test](https://github.com/tcdorg/sonarscratch-checker/workflows/Build%20%26%20Test/badge.svg)
