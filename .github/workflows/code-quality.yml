@@ -16,12 +16,14 @@ jobs:
         run: sudo dpkg -i ./content/code-quality/sonar/github/sn-scratch/sn-scratch_1.0.0_all.deb
       - name: Run SonarQube
         run: sn-scratch new --name sonarqube:7.9.1-community ./content/code-quality/sonar/images
+      - name: Set up sn-scratch-ch
+        run: sudo dpkg -i ./content/code-quality/sonar/github/sn-scratch-ch/sn-scratch-ch_1.0.0_all.deb
       - name: Wait SonarQube ready
-        run: ./content/dist/linux/sn-scratch-ch.sh -c --sleep 10000
+        run: sn-scratch-ch -c --sleep 10000
       - name: Build & Test & Analyze
         run: mvn -f ./content/pom.xml -B jacoco:prepare-agent test sonar:sonar
       - name: Check issues
-        run: ./content/dist/linux/sn-scratch-ch.sh -r --path ./sonarqube-issues.html --project:org.sonarscratch.checker:sonarscratchchecker ./content
+        run: sn-scratch-ch -r --path ./sonarqube-issues.html --project:org.sonarscratch.checker:sonarscratchchecker ./content
       - name: Upload report
         if: failure()
         uses: actions/upload-artifact@v1
