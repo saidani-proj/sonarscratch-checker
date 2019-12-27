@@ -40,7 +40,7 @@ class AppExecuteDependency {
     }
 
     BufferedWriter bufferedWriter(String reportPath) throws IOException {
-        return new BufferedWriter(new FileWriter(reportPath/*, StandardCharsets.UTF_8*/));
+        return new BufferedWriter(new FileWriter(reportPath, StandardCharsets.UTF_8));
     }
 
     Html html(IssuesCollection issuesCollection, ComponentsCollection componentsCollection, Iterable<Project> projects,
