@@ -83,7 +83,7 @@ public class App {
         }
 
         if (config.showVersion()) {
-            System.out.println("1.0");
+            System.out.println("1.0.0");
             return true;
         }
 

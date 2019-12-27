@@ -81,13 +81,13 @@ public class AppTest {
     @Test
     public void test_Execute_Version_Long() throws AppException, ReaderException {
         appExecute(new String[] { "--version" });
-        assertEquals("1.0" + System.lineSeparator(), OUT_CONTENT.toString());
+        assertEquals("1.0.0" + System.lineSeparator(), OUT_CONTENT.toString());
     }
 
     @Test
     public void test_Execute_Version_Short() throws AppException, ReaderException {
         appExecute(new String[] { "-v" });
-        assertEquals("1.0" + System.lineSeparator(), OUT_CONTENT.toString());
+        assertEquals("1.0.0" + System.lineSeparator(), OUT_CONTENT.toString());
     }
 
     @Test
