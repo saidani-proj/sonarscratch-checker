@@ -1,6 +1,6 @@
 /**
  * sonarscratch.checker project
- * Copyright (c) tcdorg. All rights reserved.
+ * Copyright (c) tcdorg community. All rights reserved.
  * Licensed under the MIT License. See LICENSE.txt in the project root for license information.
  */
 
@@ -46,7 +46,8 @@ public class ComponentsCollectionTest {
         components.addComponent(null);
         components.addComponent(null);
 
-        assertEquals(2, components.count());
+        final int COMPONENTS_COUNT = 2;
+        assertEquals(COMPONENTS_COUNT, components.count());
     }
 
     @Test
@@ -95,6 +96,7 @@ public class ComponentsCollectionTest {
             }
         }
 
-        assertEquals(2, count);
+        final int COMPONENTS_COUNT = 2;
+        assertEquals(COMPONENTS_COUNT, count);
     }
 }

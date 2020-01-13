@@ -18,6 +18,10 @@ http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.11</maven.compiler.target>
         <maven.compiler.release>11</maven.compiler.release>
+        <sonar.sources>.</sonar.sources>
+        <sonar.inclusions>src/main/java/**,src/test/java/**,pom.xml</sonar.inclusions>
+        <sonar.tests></sonar.tests>
+        <sonar.coverage.exclusions>src/test/java/**</sonar.coverage.exclusions>
     </properties>
 
     <dependencies>

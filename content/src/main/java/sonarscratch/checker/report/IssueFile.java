@@ -1,6 +1,6 @@
 /**
  * sonarscratch.checker project
- * Copyright (c) tcdorg. All rights reserved.
+ * Copyright (c) tcdorg community. All rights reserved.
  * Licensed under the MIT License. See LICENSE.txt in the project root for license information.
  */
 

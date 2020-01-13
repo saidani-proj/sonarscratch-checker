@@ -7,11 +7,11 @@
             - Long : ++
             - Short : ++
         - Check : ++
-        - Get Count :
+        - Get Count : ==
             - 0 : ++
             - @@ : ++
-        - Report :
-            - No issues : **
+        - Report : ==
+            - No issues : ++
             - @@ : ++
         - Exception : ++
         - Exit Code : ==

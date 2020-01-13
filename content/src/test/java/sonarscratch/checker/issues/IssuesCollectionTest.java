@@ -1,6 +1,6 @@
 /**
  * sonarscratch.checker project
- * Copyright (c) tcdorg. All rights reserved.
+ * Copyright (c) tcdorg community. All rights reserved.
  * Licensed under the MIT License. See LICENSE.txt in the project root for license information.
  */
 
@@ -15,9 +15,9 @@ import org.junit.Test;
 public class IssuesCollectionTest {
     @Test
     public void test_Total() {
-        final int total = 258;
+        final int TOTAL = 258;
 
-        assertEquals(total, new IssuesCollection(total).total());
+        assertEquals(TOTAL, new IssuesCollection(TOTAL).total());
     }
 
     @Test
@@ -53,7 +53,8 @@ public class IssuesCollectionTest {
         issues.addIssue(null);
         issues.addIssue(null);
 
-        assertEquals(2, issues.count());
+        final int ISSUES_COUNT = 2;
+        assertEquals(ISSUES_COUNT, issues.count());
     }
 
     @Test
@@ -102,6 +103,7 @@ public class IssuesCollectionTest {
             }
         }
 
-        assertEquals(2, count);
+        final int ISSUES_COUNT = 2;
+        assertEquals(ISSUES_COUNT, count);
     }
 }

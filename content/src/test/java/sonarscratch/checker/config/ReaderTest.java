@@ -1,6 +1,6 @@
 /**
  * sonarscratch.checker project
- * Copyright (c) tcdorg. All rights reserved.
+ * Copyright (c) tcdorg community. All rights reserved.
  * Licensed under the MIT License. See LICENSE.txt in the project root for license information.
  */
 
@@ -15,7 +15,8 @@ import org.junit.rules.ExpectedException;
 
 public class ReaderTest {
     @Rule
-    public final ExpectedException expectedException = ExpectedException.none();
+    public final ExpectedException expectedExceptionRule = ExpectedException.none();
+    private static final String PROJECT_ARGUMENT = "--project:";
 
     @Test
     public void test_Read_CorrectArgs_WhiteSpaces() throws ReaderException {
@@ -44,24 +45,24 @@ public class ReaderTest {
 
     @Test
     public void test_Read_CorrectArgs_Url() throws ReaderException {
-        final String url = "https://sonarcloud.io:9000";
+        final String URL = "https://sonarcloud.io:9000";
 
-        assertEquals(url, new Reader(new String[] { "--url", url }).read().getSonarUrl());
+        assertEquals(URL, new Reader(new String[] { "--url", URL }).read().getSonarUrl());
     }
 
     @Test
     public void test_Read_CorrectArgs_Count() throws ReaderException {
-        final int count = 15;
+        final int COUNT = 15;
 
-        assertEquals(count,
-                new Reader(new String[] { "--count", Integer.toString(count) }).read().getSonarAttemptsCount());
+        assertEquals(COUNT,
+                new Reader(new String[] { "--count", Integer.toString(COUNT) }).read().getSonarAttemptsCount());
     }
 
     @Test
     public void test_Read_CorrectArgs_Sleep() throws ReaderException {
-        final int sleep = 500;
+        final int SLEEP = 500;
 
-        assertEquals(sleep, new Reader(new String[] { "--sleep", Integer.toString(sleep) }).read()
+        assertEquals(SLEEP, new Reader(new String[] { "--sleep", Integer.toString(SLEEP) }).read()
                 .getSonarAttemptSleepMilliseconds());
     }
 
@@ -77,9 +78,9 @@ public class ReaderTest {
 
     @Test
     public void test_Read_CorrectArgs_Path() throws ReaderException {
-        final String path = "output-test.html";
+        final String PATH = "output-test.html";
 
-        assertEquals(path, new Reader(new String[] { "--path", path }).read().getReportPath());
+        assertEquals(PATH, new Reader(new String[] { "--path", PATH }).read().getReportPath());
     }
 
     private static <T> int getIterableCount(Iterable<T> iterable) {
@@ -101,36 +102,38 @@ public class ReaderTest {
 
     @Test
     public void test_Read_CorrectArgs_Project_1() throws ReaderException {
-        final String projectName = "src:key";
-        final String projectRootPath = "src/value";
+        final String PROJECT_NAME = "src:key";
+        final String PROJECT_ROOT_PATH = "src/value";
 
-        var projects = new Reader(new String[] { "--project:" + projectName, projectRootPath }).read().getProjects();
+        var projects = new Reader(new String[] { PROJECT_ARGUMENT + PROJECT_NAME, PROJECT_ROOT_PATH }).read()
+                .getProjects();
 
         assertEquals(1, getIterableCount(projects));
 
         for (Project project : projects) {
-            assertEquals(projectName, project.getName());
-            assertEquals(projectRootPath, project.getRootPath());
+            assertEquals(PROJECT_NAME, project.getName());
+            assertEquals(PROJECT_ROOT_PATH, project.getRootPath());
         }
     }
 
     @Test
     public void test_Read_CorrectArgs_Project_2() throws ReaderException {
-        final String project1Name = "src:key1";
-        final String project1RootPath = "src/value1";
-        final String project2Name = "src:key2";
-        final String project2RootPath = "src/value2";
+        final String PROJECT1_NAME = "src:key1";
+        final String PROJECT1_ROOT_PATH = "src/value1";
+        final String PROJECT2_NAME = "src:key2";
+        final String PROJECT2_ROOT_PATH = "src/value2";
 
-        var projects = new Reader(new String[] { "--project:" + project1Name, project1RootPath,
-                "--project:" + project2Name, project2RootPath }).read().getProjects();
+        var projects = new Reader(new String[] { PROJECT_ARGUMENT + PROJECT1_NAME, PROJECT1_ROOT_PATH,
+                PROJECT_ARGUMENT + PROJECT2_NAME, PROJECT2_ROOT_PATH }).read().getProjects();
 
-        assertEquals(2, getIterableCount(projects));
+        final int PROJECTS_COUNT = 2;
+        assertEquals(PROJECTS_COUNT, getIterableCount(projects));
 
         int i = 0;
 
         for (Project project : projects) {
-            assertEquals(i == 0 ? project1Name : project2Name, project.getName());
-            assertEquals(i == 0 ? project1RootPath : project2RootPath, project.getRootPath());
+            assertEquals(i == 0 ? PROJECT1_NAME : PROJECT2_NAME, project.getName());
+            assertEquals(i == 0 ? PROJECT1_ROOT_PATH : PROJECT2_ROOT_PATH, project.getRootPath());
 
             i++;
         }
@@ -138,40 +141,40 @@ public class ReaderTest {
 
     @Test
     public void test_Read_IncorrectArgs_Incoherent() throws ReaderException {
-        expectedException.expect(ReaderException.class);
-        expectedException.expectMessage("Out of arguments");
+        expectedExceptionRule.expect(ReaderException.class);
+        expectedExceptionRule.expectMessage("Out of arguments");
 
         new Reader(new String[] { "--path" }).read().getReportPath();
     }
 
     @Test
     public void test_Read_IncorrectArgs_Unknown() throws ReaderException {
-        expectedException.expect(ReaderException.class);
-        expectedException.expectMessage("Unknown argument '--unknown'");
+        expectedExceptionRule.expect(ReaderException.class);
+        expectedExceptionRule.expectMessage("Unknown argument '--unknown'");
 
         new Reader(new String[] { "--unknown" }).read().getReportPath();
     }
 
     @Test
     public void test_On_Url_Incorrect() throws ReaderException {
-        expectedException.expect(ReaderException.class);
-        expectedException.expectMessage("Unknown argument '--unknown'");
+        expectedExceptionRule.expect(ReaderException.class);
+        expectedExceptionRule.expectMessage("Unknown argument '--unknown'");
 
         new Reader(new String[] { "--unknown" }).read().getReportPath();
     }
 
     @Test
     public void test_Read_CorrectArgs_Encoding_Long() throws ReaderException {
-        final String encoding = "windows-1252";
+        final String ENCODING = "windows-1252";
 
-        assertEquals(encoding, new Reader(new String[] { "--encoding", encoding }).read().getEncoding());
+        assertEquals(ENCODING, new Reader(new String[] { "--encoding", ENCODING }).read().getEncoding());
     }
 
     @Test
     public void test_Read_CorrectArgs_Encoding_Short() throws ReaderException {
-        final String encoding = "windows-1252";
+        final String ENCODING = "windows-1252";
 
-        assertEquals(encoding, new Reader(new String[] { "-e", encoding }).read().getEncoding());
+        assertEquals(ENCODING, new Reader(new String[] { "-e", ENCODING }).read().getEncoding());
     }
 
     @Test

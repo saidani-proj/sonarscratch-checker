@@ -1,6 +1,6 @@
 /**
  * sonarscratch.checker project
- * Copyright (c) tcdorg. All rights reserved.
+ * Copyright (c) tcdorg community. All rights reserved.
  * Licensed under the MIT License. See LICENSE.txt in the project root for license information.
  */
 
@@ -12,8 +12,11 @@ import java.nio.charset.StandardCharsets;
 
 import org.mockito.Mockito;
 
-public class ClientTestUtil {
-    public static Client MockClientByFinder(byte[] stream, Client client) throws IOException {
+public final class ClientTestUtil {
+    private ClientTestUtil() {
+    }
+
+    public static Client mockClientForFinder(byte[] stream, Client client) throws IOException {
         var mockedClientOnDependency = Mockito.mock(ClientOnDependency.class);
 
         Mockito.doNothing().when(mockedClientOnDependency).connection(Mockito.anyString(), Mockito.anyBoolean());
@@ -31,7 +34,7 @@ public class ClientTestUtil {
         return mockedClient;
     }
 
-    public static Client MockClientByApp(Client client) throws IOException {
+    public static Client mockClientForApp(Client client) throws IOException {
         var mockedClient = Mockito.spy(client);
 
         var mockedClientOnDependency = Mockito.mock(ClientOnDependency.class);

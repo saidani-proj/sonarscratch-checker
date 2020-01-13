@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ROOT_PATH=$(dirname $(realpath $0))/../../..
 sn-scratch-ch -c --sleep 10000 &&
     mvn -f "$ROOT_PATH/pom.xml" jacoco:prepare-agent test sonar:sonar &&
