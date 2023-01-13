@@ -3,7 +3,7 @@
 ![Build & Test](https://github.com/tcdorg/sonarscratch-checker/workflows/Build%20%26%20Test/badge.svg)
 ![Code Quality](https://github.com/tcdorg/sonarscratch-checker/workflows/Code%20Quality/badge.svg)
 
-## About this project
+## about this project
 
 **SONARSCRATCH** checker is a tool for checking [SonarQube](https://www.sonarqube.org) issues.
 The program exit with code `1` if founds any issue and a **HTML** report will be generated.
