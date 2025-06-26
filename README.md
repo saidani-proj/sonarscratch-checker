@@ -1,4 +1,4 @@
-# sonarscratch-checker
+# sonarscratch/checker
 
 ![Build & Test](https://github.com/tcdorg/sonarscratch-checker/workflows/Build%20%26%20Test/badge.svg)
 ![Code Quality](https://github.com/tcdorg/sonarscratch-checker/workflows/Code%20Quality/badge.svg)
