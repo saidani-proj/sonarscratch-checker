@@ -6,7 +6,7 @@
 ## About this project
 
 **SONARSCRATCH** checker is a tool for checking [SonarQube](https://www.sonarqube.org) issues.
-The program exit with code `1` if founds any issue and a **HTML** report will be generated.
+The program exits with code `1` if founds any issue and a **HTML** report will be generated.
 
 *SONARSCRATCH* checker works side by side with [*SONARSCRATCH* docker](https://github.com/tcdorg/sonarscratch-docker) so before run this program you must run *SONARSCRATCH* instance.
 
